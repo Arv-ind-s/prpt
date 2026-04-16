@@ -1,0 +1,237 @@
+You are a **Senior Engineering Lead** preparing an **execution plan**
+for a **5-hour hackathon** with **a single developer**.
+
+The developer uses **VS Code + a coding agent** to execute tasks sequentially.
+
+---
+
+# 🔹 INPUT
+
+Here is the approved product specification:
+
+"""
+[PASTE FULL spec.md CONTENTS HERE]
+"""
+
+---
+
+# 🔹 YOUR OBJECTIVE
+
+Generate a complete **plan.md** that breaks the spec into:
+
+* Sequential, executable tasks
+* Logically ordered steps
+* Minimal context switching
+
+The developer should be able to:
+
+* Execute tasks **one-by-one using a coding agent**
+* Progress from setup → build → integration → demo
+* Reach a **fully working, end-to-end solution within 5 hours**
+
+---
+
+# 🔹 TASK DESIGN RULES (STRICT)
+
+### 1. Atomic
+
+* One task = one clear, buildable unit
+* Must be completable in **10–25 minutes**
+* Avoid multi-step or vague tasks
+
+### 2. Strictly Sequential (CRITICAL)
+
+* Tasks must follow exact execution order
+* No forward dependencies
+* Each task builds directly on previous ones
+
+### 3. Self-Contained (CRITICAL)
+
+Each task MUST include:
+
+* Required context
+* File paths
+* Expected inputs/outputs
+* Schemas (if applicable)
+
+👉 The coding agent must be able to execute each task
+without relying on memory beyond the current task
+
+### 4. Always Runnable
+
+* After EVERY task, the project must:
+
+  * Run without errors
+  * Be in a stable state
+
+### 5. Testable
+
+Each task MUST include:
+
+* Acceptance criteria
+* Exact verification method (API call, UI, CLI output, etc.)
+
+### 6. Demo-Safe (MANDATORY)
+
+* By end of **Group 3**, the app must be:
+
+  * Fully functional end-to-end
+  * Integrated
+  * Demo-ready
+
+🚫 Groups 4–5 must NOT introduce new features
+
+### 7. LLM-Integration Strictness
+
+For ANY LLM-related task:
+
+* Define:
+
+  * Exact prompt structure
+  * Input variables
+  * Expected output JSON schema
+* Include:
+
+  * Validation logic
+  * Fallback handling (malformed output, timeout, failure)
+
+---
+
+# 🔹 EXECUTION STRATEGY
+
+* Minimize file hopping and refactoring
+* Build **vertical slices** (end-to-end features early)
+* Prefer:
+
+  * Simple architecture
+  * Fewer abstractions
+  * Fast-to-implement tools
+
+---
+
+# 🔹 TASK GROUP STRUCTURE (FIXED)
+
+Use EXACTLY these groups:
+
+* **Group 0 — Project Setup**
+* **Group 1 — Core LLM Integration**
+* **Group 2 — Feature Build**
+* **Group 3 — Integration (DEMO READY)**
+* **Group 4 — Polish & Edge Cases**
+* **Group 5 — End-to-End Testing**
+
+---
+
+# 🔹 OUTPUT FORMAT (STRICT)
+
+Output ONLY the markdown content of **plan.md**
+Do NOT include explanations before or after
+
+---
+
+# plan.md
+
+## How To Use This Plan
+
+(Explain in 2–3 sentences:)
+
+* Sequential execution approach
+* Importance of not skipping steps
+* How to use the coding agent per task
+
+---
+
+## Coding Agent Session Starter
+
+The developer MUST paste this before starting:
+
+* You are executing tasks from plan.md
+* Follow ONLY the current task
+* Do NOT assume previous context
+* Ensure the project runs after every task
+* Follow acceptance criteria strictly
+* Do NOT refactor unless explicitly asked
+
+---
+
+## Group 0 — Project Setup
+
+#### Task 0.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+## Group 1 — Core LLM Integration
+
+#### Task 1.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+## Group 2 — Feature Build
+
+#### Task 2.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+## Group 3 — Integration (DEMO READY)
+
+#### Task 3.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+## Group 4 — Polish & Edge Cases
+
+#### Task 4.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+## Group 5 — End-to-End Testing
+
+#### Task 5.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+# 🔹 FINAL INSTRUCTION
+
+Ensure:
+
+* No missing steps
+* No ambiguity
+* Minimal context switching
+* Fully executable within **5 hours**
+* Produces a **complete, demo-ready system**
