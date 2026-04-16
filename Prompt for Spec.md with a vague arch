@@ -1,0 +1,218 @@
+Act as an AI Product Manager with expertise in secure, scalable, and maintainable system design.
+
+Your task is to create a comprehensive **spec.md** file for a hackathon project that must be built within 5 hours. The solution will be judged on **Security, Scalability, Resilience, Maintainability**, and **how effectively it solves the problem**.
+
+---
+
+# 🔹 INPUT SECTIONS (FILL THESE FIRST)
+
+## 1. Problem Statement
+
+Paste the full problem description here. Include:
+
+* Context
+* User pain points
+* Business goals
+* Constraints (if any)
+
+## 2. Proposed Vague Architecture
+
+Paste your rough architecture idea here. This can include:
+
+* High-level components
+* Tools/technologies you’re considering
+* Any assumptions
+
+⚠️ This does NOT need to be perfect. You must:
+
+* Refine it
+* Improve it
+* Justify changes
+
+---
+
+# 🔹 CONTEXT & CONSTRAINTS
+
+* **Time Constraint:** 5-hour development window
+* **Development Environment:** VS Code using Codex or Google Gemini Code Assist
+* **AI Gateway:** TCS uses LiteLLM as a gateway/proxy to serve AI models
+* **Sample Code:** Reference implementation available for model invocation
+* **Judging Criteria:** Security, Scalability, Resilience, Maintainability, and Problem-Solving Effectiveness (equal weight)
+* **Audience:** Senior software engineer who will create task breakdowns
+
+---
+
+# 🔹 CRITICAL REQUIREMENT: COMPLETE SOLUTION ONLY
+
+* The proposed system **MUST fully solve the problem end-to-end**
+* **Partial solutions are NOT acceptable**
+* Do NOT leave:
+
+  * “Future work”
+  * “To be implemented later”
+  * “Optional enhancements” that are required for core functionality
+* Every critical user flow must be:
+
+  * Designed
+  * Implementable within 5 hours (MVP scope)
+  * Secure, scalable, and resilient
+
+If trade-offs are required due to time constraints:
+
+* Reduce scope **only in non-critical areas**
+* Clearly justify what is excluded and why it does NOT break the core solution
+
+---
+
+# 🔹 CORE INSTRUCTIONS
+
+Using the inputs provided:
+
+1. Deeply understand the **Problem Statement**
+2. Critically evaluate and **refine the Proposed Architecture**
+3. Modify architecture where necessary:
+
+   * Every modification MUST include justification
+4. Ensure every decision aligns with:
+
+   * Security
+   * Scalability
+   * Resilience
+   * Maintainability
+   * 5-hour feasibility
+5. Fill gaps with **reasonable assumptions** (explicitly state them)
+6. Ensure **all core flows are fully implemented and connected end-to-end**
+
+---
+
+# 🔹 OUTPUT REQUIREMENT: spec.md
+
+Generate a clean, structured **Markdown spec.md** with the following sections:
+
+---
+
+## 1. Executive Summary
+
+* Refined problem statement
+* Solution overview
+* Value proposition
+
+## 2. Architecture Overview
+
+* High-level architecture (ASCII diagram or structured description)
+* Component relationships
+* Summary of improvements over proposed architecture (with reasoning)
+
+## 3. Component Specifications
+
+For each component include:
+
+* Purpose & responsibilities
+* Technology choice (with justification)
+* Security considerations
+* Scalability approach
+* Resilience mechanisms
+* Maintainability considerations
+
+## 4. Data Flow
+
+* Step-by-step flow of data
+* Clearly mark **security checkpoints**
+
+## 5. Security Implementation
+
+* Authentication strategy
+* Authorization model
+* Data protection (at rest & in transit)
+* API security
+* AI model access via LiteLLM considerations
+
+## 6. Scalability Strategy
+
+* Horizontal vs vertical scaling
+* Load balancing
+* Database scaling approach
+* Handling increased AI inference load
+
+## 7. Resilience Plan
+
+* Error handling strategy
+* Retry logic
+* Fallback mechanisms (especially for AI calls)
+* Monitoring & alerting
+
+## 8. Maintenance Guide
+
+* Logging strategy
+* Monitoring tools
+* Debugging approach
+* Deployment & update process
+
+## 9. 5-Hour Build Plan
+
+* Prioritized development sequence
+* Time allocation per component
+* MVP vs nice-to-have features (only if they do NOT impact completeness)
+
+## 10. Risk Assessment
+
+* Key technical risks
+* Trade-offs due to time constraint
+* Mitigation strategies
+
+## 11. Success Metrics
+
+Define **measurable indicators** for:
+
+### A. Problem Resolution Effectiveness (MANDATORY)
+
+* How well the solution solves the core problem
+* Task completion rate (%)
+* Accuracy/quality of outputs
+* User satisfaction proxy (e.g., success without retry)
+* Latency for core use case
+* Reduction in user pain points
+
+### B. Security
+
+* Number of vulnerabilities (e.g., OWASP categories avoided)
+* Authentication/authorization coverage
+* Data exposure risk levels
+
+### C. Scalability
+
+* Requests handled per second
+* System behavior under load
+* AI inference throughput
+
+### D. Resilience
+
+* Failure recovery time
+* Error rate
+* Retry success rate
+* Fallback success rate
+
+### E. Maintainability
+
+* Code modularity
+* Ease of debugging
+* Logging completeness
+* Deployment simplicity
+
+---
+
+# 🔹 OUTPUT GUIDELINES
+
+* Use clear, unambiguous language
+* Provide **specific technologies (with versions where possible)**
+* Include concrete examples where helpful
+* Optimize for **execution speed (hackathon context)**
+* Balance depth with readability (5–10 minute read)
+* Highlight **trade-offs explicitly**
+* Ensure the design is **implementable immediately without missing pieces**
+
+---
+
+# 🔹 FINAL DELIVERABLE
+
+Generate a complete **spec.md** file that acts as the **single source of truth** for the engineering team, enabling immediate task breakdown and development without ambiguity.
