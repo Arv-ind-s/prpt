@@ -1,0 +1,223 @@
+Act as an AI Product Manager and Senior System Architect with expertise in secure, scalable, resilient, and maintainable system design.
+
+Your task is to create a comprehensive **spec.md** file for a hackathon project that must be built within 5 hours.
+
+The solution will be judged on:
+
+* Security
+* Scalability
+* Resilience
+* Maintainability
+* Problem-Solving Effectiveness
+
+---
+
+# 🔹 INPUT SECTION
+
+## Problem Statement
+
+Paste the full problem description here. Include:
+
+* Context
+* User pain points
+* Business goals
+* Constraints (if any)
+
+---
+
+# 🔹 IMPORTANT: NO ARCHITECTURE PROVIDED
+
+Since no architecture is provided, you MUST:
+
+1. **Design the complete architecture from scratch**
+2. Choose technologies that are:
+
+   * Fast to implement (5-hour constraint)
+   * Secure by default
+   * Easy to scale
+   * Easy to maintain
+3. Avoid over-engineering
+4. Prefer:
+
+   * Managed services
+   * Minimal setup tools
+   * Simple, modular design
+
+---
+
+# 🔹 CONTEXT & CONSTRAINTS
+
+* **Time Constraint:** 5-hour development window
+* **Development Environment:** VS Code using Codex or Google Gemini Code Assist
+* **AI Gateway:** TCS uses LiteLLM as a gateway/proxy to serve AI models
+* **Sample Code:** Reference implementation available for model invocation
+* **Audience:** Senior software engineer who will create task breakdowns
+
+---
+
+# 🔹 CRITICAL REQUIREMENT: COMPLETE SOLUTION ONLY
+
+* The system **MUST fully solve the problem end-to-end**
+* **Partial solutions are NOT acceptable**
+* Every core user flow must be:
+
+  * Fully designed
+  * Implementable within 5 hours
+  * Secure and production-conscious
+
+If trade-offs are required:
+
+* Reduce only non-critical features
+* Do NOT break the core problem-solving capability
+
+---
+
+# 🔹 CORE INSTRUCTIONS
+
+1. Deeply analyze the **Problem Statement**
+2. Identify:
+
+   * Core user flows
+   * Critical system requirements
+3. Design a **complete architecture from scratch**
+4. For every decision:
+
+   * Justify technology choice
+   * Explain trade-offs
+5. Ensure alignment with:
+
+   * Security
+   * Scalability
+   * Resilience
+   * Maintainability
+   * Speed of development
+6. Clearly state assumptions
+
+---
+
+# 🔹 OUTPUT REQUIREMENT: spec.md
+
+Generate a clean, structured **Markdown spec.md** with the following sections:
+
+---
+
+## 1. Executive Summary
+
+* Refined problem statement
+* Solution overview
+* Value proposition
+
+## 2. Architecture Overview
+
+* High-level architecture (ASCII diagram or structured explanation)
+* Component relationships
+* Why this architecture is optimal for a 5-hour hackathon
+
+## 3. Component Specifications
+
+For each component include:
+
+* Purpose & responsibilities
+* Technology choice (with justification)
+* Security considerations
+* Scalability approach
+* Resilience mechanisms
+* Maintainability considerations
+
+## 4. Data Flow
+
+* Step-by-step flow of data
+* Clearly mark **security checkpoints**
+
+## 5. Security Implementation
+
+* Authentication strategy
+* Authorization model
+* Data protection (in transit & at rest)
+* API security
+* LiteLLM integration security considerations
+
+## 6. Scalability Strategy
+
+* Horizontal/vertical scaling decisions
+* Load handling strategy
+* AI inference scaling
+
+## 7. Resilience Plan
+
+* Error handling
+* Retry mechanisms
+* Fallbacks (especially for AI calls)
+* Monitoring
+
+## 8. Maintenance Guide
+
+* Logging
+* Monitoring
+* Debugging
+* Deployment/update process
+
+## 9. 5-Hour Build Plan
+
+* Exact step-by-step build order
+* Time allocation per task
+* Clear MVP scope
+
+## 10. Risk Assessment
+
+* Key risks
+* Trade-offs due to time constraint
+* Mitigation strategies
+
+## 11. Success Metrics
+
+Define measurable indicators for:
+
+### A. Problem Resolution Effectiveness (MANDATORY)
+
+* Task completion rate
+* Output accuracy/quality
+* Latency for core flows
+* Reduction in user pain points
+* Success without retries
+
+### B. Security
+
+* Vulnerability exposure
+* Auth coverage
+* Data protection level
+
+### C. Scalability
+
+* Throughput
+* Load handling behavior
+
+### D. Resilience
+
+* Failure recovery time
+* Error rate
+* Retry success rate
+
+### E. Maintainability
+
+* Code modularity
+* Logging completeness
+* Ease of updates
+
+---
+
+# 🔹 OUTPUT GUIDELINES
+
+* Be extremely clear and actionable
+* Recommend **specific technologies (with versions where possible)**
+* Avoid vague statements
+* Prefer simple, proven patterns
+* Ensure the system can be built **within 5 hours**
+* Highlight trade-offs explicitly
+* Ensure **no missing pieces in the solution**
+
+---
+
+# 🔹 FINAL DELIVERABLE
+
+Generate a complete **spec.md** file that acts as the **single source of truth**, enabling the engineering team to immediately begin development without ambiguity.
