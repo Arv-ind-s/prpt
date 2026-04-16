@@ -1,0 +1,252 @@
+You are a **Senior Engineering Lead** preparing a **parallel build plan**
+for a **5-hour hackathon** with up to **3 developers working simultaneously**.
+
+Each developer uses **VS Code + a coding agent** to execute tasks.
+
+---
+
+# 🔹 INPUT
+
+Here is the approved product specification:
+
+"""
+[PASTE FULL spec.md CONTENTS HERE]
+"""
+
+---
+
+# 🔹 YOUR OBJECTIVE
+
+Generate a complete **plan.md** that breaks the spec into:
+
+* Individually executable tasks
+* Logically ordered steps
+* Clearly separated **by module (A, B, C)**
+
+Each developer should be able to:
+
+* Take their module
+* Feed each task into their **coding agent**
+* Work **independently with minimal coordination**
+
+---
+
+# 🔹 TASK DESIGN RULES (STRICT)
+
+### 1. Atomic
+
+* One task = one clear, buildable unit
+* Must be completable in **15–30 minutes**
+* Avoid multi-step or vague tasks
+
+### 2. Sequential (Within Module)
+
+* Tasks must be in strict order
+* No forward dependencies within a module
+
+### 3. Interface-Aware
+
+* If a task interacts with another module:
+
+  * Reference the **exact interface contract from spec.md**
+  * Never assume internal implementation
+
+### 4. Self-Contained (CRITICAL)
+
+Each task must include:
+
+* Required context
+* File paths
+* Expected inputs/outputs
+* Any schemas or formats
+
+👉 A coding agent must be able to execute a task **in isolation**
+without relying on previous tasks or memory
+
+### 5. Testable
+
+Every task MUST end with:
+
+* Clear **acceptance criteria**
+* How to verify (API call, UI behavior, function output, etc.)
+
+### 6. Demo-Safe (MANDATORY)
+
+* By end of **Group 3**, the app must be:
+
+  * Fully integrated
+  * End-to-end functional
+  * Demo-ready
+
+🚫 Groups 4–5 must NOT introduce new features
+
+### 7. LLM-Integration Strictness
+
+For ANY LLM-related task:
+
+* Define:
+
+  * Exact prompt structure
+  * Input variables
+  * Expected output JSON schema
+* Include:
+
+  * Validation logic
+  * Fallback handling (malformed output, timeout, failure)
+
+---
+
+# 🔹 PARALLEL BUILD RULES
+
+* Modules **A, B, C run in parallel** during Groups 1–3
+* Integration checkpoints (from spec.md) are **HARD STOPS**
+* No developer proceeds past a checkpoint until all reach it
+
+### File Ownership Rules
+
+* Shared files (e.g., app.py, config.py, .env):
+
+  * Owned by ONE module only
+  * Other modules must NOT modify directly
+
+### Integration Responsibility
+
+* At each checkpoint:
+
+  * One designated developer integrates all modules
+  * Runs integration tests
+  * Fixes interface mismatches
+
+---
+
+# 🔹 TASK GROUP STRUCTURE (FIXED)
+
+Use EXACTLY these groups:
+
+* **Group 0 — Project Setup**
+  Shared setup (Dev 1 only)
+
+* **Group 1 — Core LLM Integration**
+  Owned by Module B (others scaffold only)
+
+* **Group 2 — Feature Build**
+  All modules in parallel
+
+* **Group 3 — Integration (HARD STOP)**
+  Full system integration
+
+* **Group 4 — Polish & Edge Cases**
+  Improvements only (NO new features)
+
+* **Group 5 — End-to-End Testing**
+  Executed by non-devs / testers
+
+---
+
+# 🔹 OUTPUT FORMAT (STRICT)
+
+Output ONLY the markdown content of **plan.md**
+Do NOT include explanations before or after
+
+---
+
+# plan.md
+
+## How To Use This Plan
+
+(Explain in 2–3 sentences:)
+
+* Parallel development approach
+* Checkpoint enforcement
+* How each developer should start their coding agent session
+
+---
+
+## Module Map
+
+| Module | Developer | Owns            | Depends On                |
+| ------ | --------- | --------------- | ------------------------- |
+| A      | Dev 1     | [files / layer] | [None / interface from B] |
+| B      | Dev 2     | [files / layer] | [None / interface from A] |
+| C      | Dev 3     | [files / layer] | [Module A + B interfaces] |
+
+---
+
+## Coding Agent Session Starter
+
+Each developer MUST paste this into their coding agent before starting:
+
+* You are implementing tasks from plan.md
+* Follow ONLY the current task instructions
+* Do NOT assume previous context
+* Do NOT modify files outside your module ownership
+* Ensure code is runnable after each task
+* Follow acceptance criteria strictly
+
+---
+
+## Module A — [Name]
+
+### Group 0 — Project Setup (if applicable)
+
+#### Task A0.1 — [Title]
+
+* Objective:
+* Files:
+* Steps:
+* Output:
+* Acceptance Criteria:
+
+---
+
+### Group 1 — Core LLM Integration (Scaffold Only)
+
+...
+
+---
+
+### Group 2 — Feature Build
+
+...
+
+---
+
+### Group 3 — Integration (HARD STOP)
+
+...
+
+---
+
+### Group 4 — Polish & Edge Cases
+
+...
+
+---
+
+### Group 5 — End-to-End Testing
+
+...
+
+---
+
+## Module B — [Name]
+
+(Repeat same structure)
+
+---
+
+## Module C — [Name]
+
+(Repeat same structure)
+
+---
+
+# 🔹 FINAL INSTRUCTION
+
+Ensure:
+
+* No missing steps
+* No ambiguity
+* No cross-module conflicts
+* Fully executable within **5 hours**
+* Produces a **complete, demo-ready system**
