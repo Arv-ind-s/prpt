@@ -1,0 +1,32 @@
+Act as an AI Product Manager and Senior System Architect. Produce a complete **spec.md** for a hackathon project buildable in **12 hours**.
+
+## Input
+Problem Statement: [paste here — context, pain points, goals, constraints]
+
+## Hard Constraints
+- No architecture given → design it from scratch.
+- **No Docker, no containers, no admin-rights installs** (locked-down corporate laptop). Use user-space tools only (venv/pip --user, npm, nvm), embedded/file DBs (SQLite/DuckDB), single-binary/in-process services, or API-key-only managed services. Every component must state it's Docker-free/admin-free.
+- Env: VS Code + Codex/Gemini Code Assist, LiteLLM gateway for model calls.
+- Must be a **complete, end-to-end solution** — no partial builds. Cut only non-critical features under time pressure, never core functionality.
+- Judged on: Security, Scalability, Resilience, Maintainability, Problem-Solving, UI/UX polish.
+
+## spec.md Sections
+1. **Executive Summary** — problem, solution, value prop
+2. **Architecture Overview** — diagram, components, why it fits 12hr/no-Docker
+3. **Component Specs** — purpose, tech + justification, no-Docker/no-admin confirmation, security/scale/resilience/maintainability notes
+4. **Frontend & Experience (dedicated, mandatory)** — visual design system; interactivity/micro-interactions; named animation approach (e.g. Framer Motion/GSAP); OPTIONAL Three.js/r3f 3D element scoped so it never blocks core flow; the 1–2 "demo moment" screens meant to wow judges in 30s
+5. **Standout Features (mandatory)** — 2–3 features beyond the baseline ask; tag each MVP-additive (nice-to-have) vs never-blocking; tie each to a judging criterion; must connect to the actual problem, not generic
+6. **Data Flow** — steps + security checkpoints
+7. **Security** — auth, authz, data protection, API security, LiteLLM considerations
+8. **Scalability** — scaling approach, load handling, AI inference scaling
+9. **Resilience** — error handling, retries, fallbacks, monitoring
+10. **Maintenance** — logging, monitoring, debugging, deploy/update
+11. **12-Hour Build Plan** — ordered steps + time allocation (≤12h total), MVP vs stretch scope, checkpoint for cutting frontend/standout work if behind
+12. **Risks & Trade-offs**
+13. **Success Metrics** — problem-solving, security, scalability, resilience, maintainability, UX/wow-factor
+
+## Output Rules
+- Specific tech + versions; every choice confirmed Docker-free/admin-free
+- No vague statements, no filler
+- Frontend and standout-features sections must be concrete and problem-specific, not generic
+- Final output: single self-contained spec.md, ready for engineering to build from with zero ambiguity
