@@ -1,0 +1,47 @@
+Act as a Senior Engineer breaking down work for immediate execution. Convert the attached **spec.md** and **plan.md** into a **tasks.md** — a complete, ordered, implementable task list. Do not re-plan or re-architect; decompose what plan.md already scheduled into tasks small enough that a developer (or an AI coding assistant) can pick one up and ship it with zero ambiguity.
+
+## Inputs
+- spec.md (architecture, constraints, standout features, success metrics)
+- plan.md (workstreams, timeline, dependency graph, task breakdown, DoD, risks)
+
+## Non-Negotiable Outcome
+The purpose of tasks.md is not "a list of things to do" — it is **the exact set of tasks that, once all completed, produce a working, demoable, hackathon-winning product** within the 12-hour window. Before finalizing, verify:
+- Every core user flow in spec.md maps to at least one task (no silent gaps).
+- Every workstream in plan.md (Backend, AI integration, Frontend & Experience, Standout Features, Security, Integration/QA/Demo) is represented.
+- The MVP cutline and stretch/standout tasks are clearly separable — cutting stretch tasks must never break the core demo.
+- No Docker / no admin-rights installs anywhere in any task's setup steps.
+
+## Hard Constraints (inherited — do not violate)
+- 12-hour build window; tasks must fit the hour allocations from plan.md's timeline (flag, don't silently change, if they don't fit).
+- No Docker/containers/admin-rights installs — user-space tooling only (venv/pip --user, npm, nvm, SQLite/DuckDB, API-key-only managed services).
+- Core flow is non-negotiable; only stretch/standout tasks are droppable.
+- Frontend polish (with optional Three.js/3D) and Standout Features remain distinct, separately-tagged tasks — never merged invisibly into backend tasks.
+
+## Task Format (every task must follow this exact structure)
+
+```
+### [ID] Task Name
+- **Workstream:** Backend / AI Integration / Frontend & Experience / Standout Feature / Security / Integration-QA-Demo
+- **Tag:** MVP | Stretch
+- **Depends on:** [task IDs, or "None"]
+- **Estimated time:** Xh Ym
+- **Description:** what to build, in 1–3 sentences, concrete enough to start immediately
+- **Implementation notes:** key libraries/tech (must be Docker-free/admin-free), file/module touchpoints, any spec.md section it implements
+- **Acceptance criteria:** bullet list of testable conditions — this task is NOT done until every bullet is true
+- **Demo relevance:** does this task touch a judge-facing moment? (yes/no + which)
+```
+
+## tasks.md Structure
+
+1. **Build Order** — the full task list above, ordered by dependency + timeline, grouped under hour ranges from plan.md (e.g. "Hour 0–2: Foundation").
+2. **Critical Path Tasks** — flagged subset that must not slip, per plan.md's dependency graph.
+3. **MVP Completion Gate** — the exact task IDs that constitute "core product works end-to-end." Nothing after this gate is required for a working demo.
+4. **Stretch Task Queue** — remaining tasks (Frontend polish beyond baseline, 3D/Three.js layer, Standout Features), ordered by judge-impact-per-hour-of-effort, so if time is short the team always cuts from the bottom of this queue, not at random.
+5. **Pre-Demo Verification Checklist** — final tasks: end-to-end run-through, fallback behavior if AI/API calls fail live, judge-facing script for the "demo moment" from spec.md, and a rollback task if a stretch feature breaks something mid-integration.
+6. **Traceability Check** — a short table confirming every spec.md success metric and every plan.md workstream has at least one corresponding task ID (catches gaps before build starts).
+
+## Output Rules
+- Every task must be independently startable with the info given — no task should require guessing plan.md or spec.md content not already restated in it.
+- Dense, imperative, no filler prose.
+- Acceptance criteria must be testable/observable, not vague ("works well" is not acceptable; "returns 200 with valid JSON schema X" is).
+- Final output: a single self-contained tasks.md such that completing every MVP-tagged task guarantees a working core product, and completing available Stretch-tagged tasks (as time allows) maximizes hackathon judging impact.
