@@ -1,0 +1,48 @@
+Act as a Senior Engineering Lead. Convert the attached **spec.md** into a **plan.md** — an execution plan a team can follow hour-by-hour during a 12-hour hackathon build. Do not re-architect; expand and sequence what spec.md already decided.
+
+## Input
+spec.md (full content pasted/attached below)
+
+## Hard Constraints (inherited from spec.md — do not violate)
+- 12-hour total build window.
+- No Docker, no containers, no admin-rights installs (corporate laptop). Every setup step must be runnable via user-space tools only (venv/pip --user, npm, nvm, embedded DBs like SQLite/DuckDB, API-key-only managed services).
+- Core problem-solving flow is non-negotiable; only non-critical scope can be cut under time pressure.
+- Frontend/UX polish (with optional Three.js/3D) and the standout features are tracked as their own workstreams, not folded silently into backend tasks — they must appear as visible, separately-schedulable blocks so they get cut deliberately, not accidentally, if time runs short.
+
+## plan.md Sections
+
+1. **Scope Recap** — one-paragraph restatement of what's being built and the MVP boundary (from spec.md), so the plan is self-checking against scope creep.
+
+2. **Workstreams** — split the build into parallelizable tracks, e.g.:
+   - Backend/API & data layer
+   - AI/LLM integration (LiteLLM calls, prompts, fallback handling)
+   - **Frontend & Experience** (own track — UI build, animations, optional 3D/Three.js layer, the "demo moment" screens)
+   - **Standout Features** (own track, explicitly marked stretch/never-blocking)
+   - Security & infra hardening
+   - Integration, QA, demo prep
+   For each: owner (if multi-person), dependencies on other workstreams, and Docker-free/admin-free confirmation for any new tooling introduced.
+
+3. **Hour-by-Hour Timeline** — a table across all 12 hours mapping each hour to concrete work items per workstream. Must include:
+   - Explicit MVP cutline hour (the point by which core flow must work end-to-end)
+   - Explicit checkpoint hour(s) for deciding whether standout features / 3D layer proceed or get dropped
+   - Buffer time before the deadline for integration bugs and demo rehearsal (never zero)
+
+4. **Dependency Graph** — what must finish before what starts (e.g. API contract before frontend integration, data schema before AI prompt wiring). Call out the critical path.
+
+5. **Task Breakdown per Workstream** — for each workstream, a flat list of discrete, assignable tasks (this is the direct input to tasks.md generation later) with:
+   - Task name
+   - Estimated duration
+   - Blocking? (yes/no — does this sit on the critical path)
+   - MVP or Stretch tag
+
+6. **Risk & Contingency** — top 3–5 risks to the timeline (carried from spec.md's Risk Assessment + any planning-specific ones), each with a trigger condition and a pre-decided fallback action (e.g. "if AI latency >2s by hour 6, cut real-time mode to on-demand").
+
+7. **Definition of Done (per workstream)** — what "complete enough to demo" means for each track, so no one gimbals on unnecessary polish.
+
+8. **Demo Readiness Checklist** — final-hour checklist: core flow works live, standout features status (built/cut), fallback plan if AI calls fail live, script for the judge-facing "demo moment."
+
+## Output Rules
+- Dense, imperative, no filler prose — tables and bullet lists over paragraphs wherever possible.
+- Every time estimate must be traceable back to spec.md's 12-hour build plan; flag any mismatch instead of silently changing it.
+- Frontend/3D and standout-feature tasks must be concrete and scoped to the actual problem (no generic placeholders).
+- Final output: a single self-contained plan.md ready to be handed directly to tasks.md generation with zero re-interpretation needed.
