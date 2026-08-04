@@ -1,0 +1,28 @@
+Generate a stunning, Apple-keynote-style 3D presentation for [PRODUCT NAME], using the attached spec.md and plan.md as ground truth for every technical claim, component, and data point. No invented numbers or architecture pieces.
+
+VISUAL IDENTITY (must recur in every scene — this is what makes it feel premium, not generic):
+- One signature material/light motif carried throughout: e.g. dark charcoal void background, single dramatic key light per object, frosted-glass or brushed-metal surfaces, soft volumetric glow on active elements. Pick one and never break it.
+- Palette: near-black background, one accent color tied to the product's brand, white/silver for structure. No rainbow variety.
+- Every 3D object is a literal, accurate representation of a real system component from the spec — not decorative shapes.
+
+CAMERA & MOTION GRAMMAR:
+- Slow push-ins on reveal, orbit shots to show depth on architecture, rack-focus to shift attention between foreground/background elements, parallax drift on transitions.
+- No hard cuts — every scene transitions via continuous camera motion or a match-cut on a shared visual element (a component from scene N becomes the anchor for scene N+1).
+- Typography is large, bold, appears via reveal (not fade), and never coexists with dense visuals — one hero statement per scene, timed with the camera.
+
+SCENE STRUCTURE (each with its own visual mechanism):
+1. **Hook** — the problem as a visceral moment, not a stat. One dramatic 3D visual of the failure state (e.g. a broken/red-pulsing process).
+2. **Impact** — the cost, visualized as scale (growing stacked geometry, a counter ticking against a backdrop) — not a bullet list.
+3. **Solution reveal** — the product's core mechanism as one clean visual metaphor, camera pushing in as it assembles from parts.
+4. **Live architecture diagram** — this must feel alive, not animated-once: glowing pulses traveling along real connection paths to show actual data flow direction, layers that expand on camera focus, a visible fallback/guardrail path that lights up separately from the happy path. Built piece-by-piece as narration covers each part, camera orbiting to reveal depth.
+5. **Technical deep dive** — data used, model/latency choices, security & guardrail layers, failure handling — each gets one focused 3D visual, not a slide of text.
+6. **Reliability & scale** — show the system under simulated load/edge-case stress and recovering — a concrete before/after or live-stress visual, not a claim.
+7. **Wow factor** — its own scene with a transformation or reveal mechanism (a scale shift, an unexpected layer peeling back, an "aha" reframe) — the single most repeatable, memorable image of the whole deck.
+8. **Close** — the hero visual from scene 3 returns, camera pulls back to reveal the full system in one frame, one closing line.
+
+TECHNICAL/DELIVERY SPEC:
+- Full-screen 16:9, built for laptop-to-large-screen casting: no reliance on mouse hover, minimum interaction (scroll-driven or autoplay-timed), text legible from 15+ feet.
+- Output format: [specify — e.g. HTML/Three.js single-file, or scene-by-scene shot list for a design tool].
+- Every technical claim traceable to spec.md/plan.md — flag anything you'd need to invent.
+
+Build for critical hackathon judges who've seen dozens of pitches today — the visual identity and camera language must feel distinct enough that this deck is remembered by silhouette alone, before a single word is read.
